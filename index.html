@@ -107,7 +107,7 @@
       font-weight: bold;
     }
 
-    /* HERO BANNER CON LOGO GIGANTE CIRCULAR */
+    /* HERO BANNER CON ÚNICA FOTO: LOGO GIGANTE CIRCULAR */
     .hero {
       background-color: #050505;
       padding: 3.5rem 1rem 2.5rem;
@@ -224,37 +224,12 @@
       flex-direction: column;
       justify-content: space-between;
       transition: transform 0.2s ease, border-color 0.2s ease;
-      overflow: hidden;
     }
 
     .product-card:hover {
       transform: translateY(-4px);
       border-color: var(--brand-green);
       background: var(--bg-card-hover);
-    }
-
-    .product-image-wrapper {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background-color: #FFFFFF;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-    }
-
-    .product-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .product-card:hover .product-image-wrapper img {
-      transform: scale(1.04);
     }
 
     .product-info h3 {
@@ -395,16 +370,8 @@
       border-radius: 8px;
       padding: 0.8rem;
       display: flex;
-      gap: 0.8rem;
+      justify-content: space-between;
       align-items: center;
-    }
-
-    .cart-item-img {
-      width: 50px;
-      height: 50px;
-      border-radius: 6px;
-      object-fit: cover;
-      background: #fff;
     }
 
     .cart-item-details {
@@ -503,7 +470,7 @@
     </div>
   </header>
 
-  <!-- HERO BANNER CON LOGO GIGANTE -->
+  <!-- HERO BANNER CON LOGO GIGANTE (ÚNICA FOTO DE LA WEB) -->
   <section class="hero">
     <img src="logo.png" alt="Lomitos Santiagueños Logo" class="hero-logo" onerror="this.src='https://via.placeholder.com/320/121212/38C695?text=Lomitos+Santiagueños'">
     <div class="store-status">
@@ -590,39 +557,39 @@
     const WHATSAPP_NUMBER = "5493442475292";
 
     const productsData = [
-      // LAS 10 PROMOS EXACTAS CON IMAGEN
-      { id: 1, name: "PROMO AMERICANA", price: 42000, category: "promos", desc: "2 Lomitos Americanos + 1 Coca de 1.75 Lts", image: "promo1.png" },
-      { id: 2, name: "PROMO MILAS CLÁSICAS", price: 38000, category: "promos", desc: "2 Milas Clásicas + 1 Coca de 1.75 Lts", image: "promo2.png" },
-      { id: 3, name: "PROMO AL VERDEO", price: 41000, category: "promos", desc: "2 Lomitos al Verdeo + 1 Coca de 1.75 Lts", image: "promo3.png" },
-      { id: 4, name: "PROMO SANTIAGUEÑOS", price: 38000, category: "promos", desc: "2 Lomitos Santiagueños + 1 Coca de 1.75 Lts", image: "promo4.png" },
-      { id: 5, name: "PROMO COMBINADA 1", price: 40000, category: "promos", desc: "1 Lomito Americano + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts", image: "promo5.png" },
-      { id: 6, name: "PROMO COMBINADA 2", price: 40500, category: "promos", desc: "1 Lomito c/ Cheddar y Bacon + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts", image: "promo6.png" },
-      { id: 7, name: "PROMO COMBINADA 3", price: 38000, category: "promos", desc: "1 Lomito Santiagueño + 1 Mila Clásica + 1 Coca de 1.75 Lts", image: "promo7.png" },
-      { id: 8, name: "PROMO COMBINADA 4", price: 39500, category: "promos", desc: "1 Lomito 4 Quesos + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts", image: "promo8.png" },
-      { id: 9, name: "BOX 2 HAMBURGUESAS + PAPAS CHEDDAR Y BACON", price: 25000, category: "promos", desc: "2 hamburguesas (medallón, tomate, lechuga, mayo casera, ketchup y savora) + papas con cheddar, panceta y verdeo", image: "promo9.png" },
-      { id: 10, name: "BOX 2 HAMBURGUESAS + PORCIÓN DE PAPAS", price: 23000, category: "promos", desc: "2 hamburguesas (medallón, tomate, lechuga, mayo casera, ketchup y savora) + porción de papas", image: "promo10.png" },
+      // PROMOS SIN FOTOS
+      { id: 1, name: "PROMO AMERICANA", price: 42000, category: "promos", desc: "2 Lomitos Americanos + 1 Coca de 1.75 Lts" },
+      { id: 2, name: "PROMO MILAS CLÁSICAS", price: 38000, category: "promos", desc: "2 Milas Clásicas + 1 Coca de 1.75 Lts" },
+      { id: 3, name: "PROMO AL VERDEO", price: 41000, category: "promos", desc: "2 Lomitos al Verdeo + 1 Coca de 1.75 Lts" },
+      { id: 4, name: "PROMO SANTIAGUEÑOS", price: 38000, category: "promos", desc: "2 Lomitos Santiagueños + 1 Coca de 1.75 Lts" },
+      { id: 5, name: "PROMO COMBINADA 1", price: 40000, category: "promos", desc: "1 Lomito Americano + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts" },
+      { id: 6, name: "PROMO COMBINADA 2", price: 40500, category: "promos", desc: "1 Lomito c/ Cheddar y Bacon + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts" },
+      { id: 7, name: "PROMO COMBINADA 3", price: 38000, category: "promos", desc: "1 Lomito Santiagueño + 1 Mila Clásica + 1 Coca de 1.75 Lts" },
+      { id: 8, name: "PROMO COMBINADA 4", price: 39500, category: "promos", desc: "1 Lomito 4 Quesos + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts" },
+      { id: 9, name: "BOX 2 HAMBURGUESAS + PAPAS CHEDDAR Y BACON", price: 25000, category: "promos", desc: "2 hamburguesas (medallón, tomate, lechuga, mayo casera, ketchup y savora) + papas con cheddar, panceta y verdeo" },
+      { id: 10, name: "BOX 2 HAMBURGUESAS + PORCIÓN DE PAPAS", price: 23000, category: "promos", desc: "2 hamburguesas (medallón, tomate, lechuga, mayo casera, ketchup y savora) + porción de papas" },
 
       // LOMITOS
-      { id: 11, name: "Lomito Santiagueño", price: 19500, category: "lomitos", desc: "Lomo, jamón, queso, huevo, tomate, lechuga y mayonesa casera", image: "lomito1.png" },
-      { id: 12, name: "Lomito Americano", price: 21000, category: "lomitos", desc: "Lomo, cheddar, bacon crocante, huevo frito y barbacoa", image: "lomito2.png" },
-      { id: 13, name: "Lomito 4 Quesos", price: 20500, category: "lomitos", desc: "Lomo, mozzarella, cheddar, roquefort y sardo rallado", image: "lomito3.png" },
-      { id: 14, name: "Lomito al Verdeo", price: 21000, category: "lomitos", desc: "Lomo, mozzarella, salsa de queso al verdeo y papas fritas", image: "lomito4.png" },
+      { id: 11, name: "Lomito Santiagueño", price: 19500, category: "lomitos", desc: "Lomo, jamón, queso, huevo, tomate, lechuga y mayonesa casera" },
+      { id: 12, name: "Lomito Americano", price: 21000, category: "lomitos", desc: "Lomo, cheddar, bacon crocante, huevo frito y barbacoa" },
+      { id: 13, name: "Lomito 4 Quesos", price: 20500, category: "lomitos", desc: "Lomo, mozzarella, cheddar, roquefort y sardo rallado" },
+      { id: 14, name: "Lomito al Verdeo", price: 21000, category: "lomitos", desc: "Lomo, mozzarella, salsa de queso al verdeo y papas fritas" },
 
       // MILANESAS
-      { id: 20, name: "Sándwich de Mila Clásica", price: 18000, category: "milanesa", desc: "Milanesa de carne, tomate, lechuga y mayonesa casera", image: "mila1.png" },
-      { id: 21, name: "Sándwich de Mila Completa", price: 20000, category: "milanesa", desc: "Milanesa de carne, jamón, queso, huevo frito, lechuga y tomate", image: "mila2.png" },
+      { id: 20, name: "Sándwich de Mila Clásica", price: 18000, category: "milanesa", desc: "Milanesa de carne, tomate, lechuga y mayonesa casera" },
+      { id: 21, name: "Sándwich de Mila Completa", price: 20000, category: "milanesa", desc: "Milanesa de carne, jamón, queso, huevo frito, lechuga y tomate" },
 
       // HAMBURGUESAS
-      { id: 30, name: "Hamburguesa Clásica", price: 11500, category: "hamburguesas", desc: "Medallón, tomate, lechuga, mayo casera, ketchup y savora", image: "burguer1.png" },
-      { id: 31, name: "Hamburguesa Doble Cheddar Bacon", price: 14000, category: "hamburguesas", desc: "Doble medallón, doble cheddar, bacon crocante y mayo casera", image: "burguer2.png" },
+      { id: 30, name: "Hamburguesa Clásica", price: 11500, category: "hamburguesas", desc: "Medallón, tomate, lechuga, mayo casera, ketchup y savora" },
+      { id: 31, name: "Hamburguesa Doble Cheddar Bacon", price: 14000, category: "hamburguesas", desc: "Doble medallón, doble cheddar, bacon crocante y mayo casera" },
 
       // PAPAS
-      { id: 40, name: "Papas Fritas Clásicas", price: 7500, category: "papas", desc: "Porción abundante de papas fritas crocantes", image: "papas1.png" },
-      { id: 41, name: "Papas c/ Cheddar, Panceta y Verdeo", price: 10500, category: "papas", desc: "Porción para compartir bañada en salsa cheddar, panceta y verdeo", image: "papas2.png" },
+      { id: 40, name: "Papas Fritas Clásicas", price: 7500, category: "papas", desc: "Porción abundante de papas fritas crocantes" },
+      { id: 41, name: "Papas c/ Cheddar, Panceta y Verdeo", price: 10500, category: "papas", desc: "Porción para compartir bañada en salsa cheddar, panceta y verdeo" },
 
       // BEBIDAS
-      { id: 50, name: "Coca Cola 1.75 Lts", price: 4000, category: "bebidas", desc: "Botella familiar de Coca Cola", image: "coca.png" },
-      { id: 51, name: "Agua Mineral 500ml", price: 2000, category: "bebidas", desc: "Con o sin gas", image: "agua.png" }
+      { id: 50, name: "Coca Cola 1.75 Lts", price: 4000, category: "bebidas", desc: "Botella familiar de Coca Cola" },
+      { id: 51, name: "Agua Mineral 500ml", price: 2000, category: "bebidas", desc: "Con o sin gas" }
     ];
 
     let cart = {};
@@ -660,17 +627,7 @@
             const card = document.createElement('div');
             card.className = 'product-card';
 
-            let imageHtml = '';
-            if (prod.image) {
-              imageHtml = `
-                <div class="product-image-wrapper">
-                  <img src="${prod.image}" alt="${prod.name}" onerror="handleImageError(this)">
-                </div>
-              `;
-            }
-
             card.innerHTML = `
-              ${imageHtml}
               <div class="product-info">
                 <h3>${prod.name}</h3>
                 <div class="product-desc">${prod.desc}</div>
@@ -693,13 +650,6 @@
           catalogEl.appendChild(grid);
         }
       });
-    }
-
-    function handleImageError(imgElement) {
-      const container = imgElement.parentElement;
-      if (container) {
-        container.remove();
-      }
     }
 
     function changeQty(productId, change) {
@@ -734,7 +684,6 @@
           const cartItem = document.createElement('div');
           cartItem.className = 'cart-item';
           cartItem.innerHTML = `
-            <img src="${prod.image}" class="cart-item-img" onerror="this.style.display='none'">
             <div class="cart-item-details">
               <div style="font-weight:bold; font-size:0.95rem;">${prod.name}</div>
               <div style="color:var(--brand-green); font-size:0.9rem;">$${prod.price.toLocaleString('es-AR')} x ${qty}</div>
