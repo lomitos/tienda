@@ -107,7 +107,7 @@
       font-weight: bold;
     }
 
-    /* HERO BANNER CON ÚNICA FOTO: LOGO GIGANTE CIRCULAR */
+    /* HERO BANNER CON LOGO GIGANTE CIRCULAR */
     .hero {
       background-color: #050505;
       padding: 3.5rem 1rem 2.5rem;
@@ -470,7 +470,7 @@
     </div>
   </header>
 
-  <!-- HERO BANNER CON LOGO GIGANTE (ÚNICA FOTO DE LA WEB) -->
+  <!-- HERO BANNER CON LOGO GIGANTE -->
   <section class="hero">
     <img src="logo.png" alt="Lomitos Santiagueños Logo" class="hero-logo" onerror="this.src='https://via.placeholder.com/320/121212/38C695?text=Lomitos+Santiagueños'">
     <div class="store-status">
@@ -557,39 +557,72 @@
     const WHATSAPP_NUMBER = "5493442475292";
 
     const productsData = [
-      // PROMOS SIN FOTOS
-      { id: 1, name: "PROMO AMERICANA", price: 42000, category: "promos", desc: "2 Lomitos Americanos + 1 Coca de 1.75 Lts" },
-      { id: 2, name: "PROMO MILAS CLÁSICAS", price: 38000, category: "promos", desc: "2 Milas Clásicas + 1 Coca de 1.75 Lts" },
-      { id: 3, name: "PROMO AL VERDEO", price: 41000, category: "promos", desc: "2 Lomitos al Verdeo + 1 Coca de 1.75 Lts" },
-      { id: 4, name: "PROMO SANTIAGUEÑOS", price: 38000, category: "promos", desc: "2 Lomitos Santiagueños + 1 Coca de 1.75 Lts" },
-      { id: 5, name: "PROMO COMBINADA 1", price: 40000, category: "promos", desc: "1 Lomito Americano + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts" },
-      { id: 6, name: "PROMO COMBINADA 2", price: 40500, category: "promos", desc: "1 Lomito c/ Cheddar y Bacon + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts" },
-      { id: 7, name: "PROMO COMBINADA 3", price: 38000, category: "promos", desc: "1 Lomito Santiagueño + 1 Mila Clásica + 1 Coca de 1.75 Lts" },
-      { id: 8, name: "PROMO COMBINADA 4", price: 39500, category: "promos", desc: "1 Lomito 4 Quesos + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts" },
-      { id: 9, name: "BOX 2 HAMBURGUESAS + PAPAS CHEDDAR Y BACON", price: 25000, category: "promos", desc: "2 hamburguesas (medallón, tomate, lechuga, mayo casera, ketchup y savora) + papas con cheddar, panceta y verdeo" },
-      { id: 10, name: "BOX 2 HAMBURGUESAS + PORCIÓN DE PAPAS", price: 23000, category: "promos", desc: "2 hamburguesas (medallón, tomate, lechuga, mayo casera, ketchup y savora) + porción de papas" },
+      // LOMITOS (TODOS INCLUYEN PAPAS)
+      { id: 1, name: "LOMITO SANTIAGUEÑO", price: 17000, category: "lomitos", desc: "Pan, lomo vacuno, huevo, jamón, queso, lechuga, tomate y mayo casera. Incluye papas." },
+      { id: 2, name: "LOMITO CRIOLLO", price: 18000, category: "lomitos", desc: "Pan, lomo vacuno, huevo, jamón, queso, lechuga, tomate, salsa criolla y mayo casera. Incluye papas." },
+      { id: 3, name: "LOMITO AL VERDEO", price: 18500, category: "lomitos", desc: "Pan, lomo vacuno, huevo, jamón, queso, lechuga, tomate, salsa de verdeo con crema y mayo casera. Incluye papas." },
+      { id: 4, name: "LOMITO 4 QUESOS", price: 18500, category: "lomitos", desc: "Pan, lomo vacuno, huevo, quesos Tybo, cheddar, muzzarella, roquefort, lechuga, tomate y mayo casera. Incluye papas." },
+      { id: 5, name: "LOMITO AMERICANO", price: 19000, category: "lomitos", desc: "Pan, lomo vacuno, queso Tybo, huevo revuelto, cebolla caramelizada, bacon, salsa BBQ y mayo casera. Incluye papas." },
+      { id: 6, name: "LOMITO C/ CHEDDAR Y BACON", price: 19500, category: "lomitos", desc: "Pan, lomo vacuno, huevo, cheddar, bacon, salsa BBQ, lechuga, tomate y mayo casera. Incluye papas." },
+      { id: 7, name: "LOMITO GRATINADO C/ CHEDDAR", price: 20000, category: "lomitos", desc: "Pan, lomo vacuno, huevo, jamón, queso, lechuga, tomate y mayo casera. Gratinado con cheddar, morrón rojo, cebolla morada, verdeo y orégano. Incluye papas." },
+      { id: 8, name: "LOMITO GRATINADO BACON Y HUEVO", price: 20500, category: "lomitos", desc: "Pan, lomo vacuno, huevo, jamón, queso, lechuga, tomate y mayo casera. Gratinado con queso Tybo, bacon, huevo frito, morrón, perejil y orégano. Incluye papas." },
+      { id: 9, name: "LOMITO GRATINADO A LA CALABREZA", price: 20000, category: "lomitos", desc: "Pan, lomo vacuno, huevo, jamón, queso, lechuga, tomate y mayo casera. Gratinado con queso Tybo, morrón rojo y orégano. Incluye papas." },
+      { id: 10, name: "LOMITO VEGETARIANO", price: 15000, category: "lomitos", desc: "Pan, champiñones salteados, huevo, muzzarella, lechuga, tomate, salsa BBQ y mayo casera. Incluye papas." },
 
-      // LOMITOS
-      { id: 11, name: "Lomito Santiagueño", price: 19500, category: "lomitos", desc: "Lomo, jamón, queso, huevo, tomate, lechuga y mayonesa casera" },
-      { id: 12, name: "Lomito Americano", price: 21000, category: "lomitos", desc: "Lomo, cheddar, bacon crocante, huevo frito y barbacoa" },
-      { id: 13, name: "Lomito 4 Quesos", price: 20500, category: "lomitos", desc: "Lomo, mozzarella, cheddar, roquefort y sardo rallado" },
-      { id: 14, name: "Lomito al Verdeo", price: 21000, category: "lomitos", desc: "Lomo, mozzarella, salsa de queso al verdeo y papas fritas" },
-
-      // MILANESAS
-      { id: 20, name: "Sándwich de Mila Clásica", price: 18000, category: "milanesa", desc: "Milanesa de carne, tomate, lechuga y mayonesa casera" },
-      { id: 21, name: "Sándwich de Mila Completa", price: 20000, category: "milanesa", desc: "Milanesa de carne, jamón, queso, huevo frito, lechuga y tomate" },
+      // SÁNDWICHES DE MILANESAS (TODOS INCLUYEN PAPAS)
+      { id: 20, name: "MILANESA CLÁSICA", price: 17000, category: "milanesa", desc: "Pan tostado, mila de ternera, huevo, jamón, queso, lechuga, tomate, mayo casera, savora y ketchup. Incluye papas." },
+      { id: 21, name: "MILANESA CRIOLLA", price: 18000, category: "milanesa", desc: "Pan tostado, mila de ternera, huevo, jamón, queso, lechuga, tomate, salsa criolla, mayo casera, savora y ketchup. Incluye papas." },
+      { id: 22, name: "MILA AL VERDEO", price: 18500, category: "milanesa", desc: "Pan tostado, mila de ternera, huevo, jamón, queso, lechuga, tomate, salsa de verdeo con crema y mayo casera. Incluye papas." },
+      { id: 23, name: "MILA 4 QUESOS", price: 18500, category: "milanesa", desc: "Pan tostado, mila de ternera, huevo, quesos Tybo, cheddar, muzzarella, roquefort, lechuga, tomate y mayo casera. Incluye papas." },
+      { id: 24, name: "MILANESA AMERICANA", price: 19000, category: "milanesa", desc: "Pan tostado, mila de ternera, queso Tybo, huevo revuelto, cebolla caramelizada, bacon, salsa BBQ y mayo casera. Incluye papas." },
+      { id: 25, name: "MILANESA C/ CHEDDAR Y BACON", price: 19500, category: "milanesa", desc: "Pan tostado, mila de ternera, huevo, cheddar, bacon, salsa BBQ, lechuga, tomate y mayo casera. Incluye papas." },
+      { id: 26, name: "MILANESA GRATINADA C/ CHEDDAR", price: 20000, category: "milanesa", desc: "Pan tostado, mila de ternera, huevo, jamón, queso, lechuga, tomate, mayo casera, savora y ketchup. Gratinada con cheddar, morrón rojo, cebolla morada, verdeo y orégano. Incluye papas." },
+      { id: 27, name: "MILANESA GRATINADA A LA CALABREZA", price: 20000, category: "milanesa", desc: "Pan tostado, mila de ternera, huevo, jamón, queso, lechuga, tomate, mayo casera, savora y ketchup. Gratinada con queso Tybo, salamín, morrón rojo y orégano. Incluye papas." },
+      { id: 28, name: "MILANESA DE POLLO", price: 16000, category: "milanesa", desc: "Pan tostado, mila de pollo, huevo, jamón, queso, lechuga, tomate, mayo casera, savora y ketchup. Incluye papas." },
 
       // HAMBURGUESAS
-      { id: 30, name: "Hamburguesa Clásica", price: 11500, category: "hamburguesas", desc: "Medallón, tomate, lechuga, mayo casera, ketchup y savora" },
-      { id: 31, name: "Hamburguesa Doble Cheddar Bacon", price: 14000, category: "hamburguesas", desc: "Doble medallón, doble cheddar, bacon crocante y mayo casera" },
+      { id: 40, name: "HAMBUR SIMPLE", price: 11000, category: "hamburguesas", desc: "Medallón 110 gr, tomate, lechuga, doble cheddar y aderezos." },
+      { id: 41, name: "HAMBURGUESA ESPECIAL", price: 13000, category: "hamburguesas", desc: "Medallón 110 gr, huevo, jamón, queso, lechuga, tomate, mayo casera, savora y ketchup. Incluye papas." },
+      { id: 42, name: "HAMBURGER", price: 13000, category: "hamburguesas", desc: "Medallón 110 gr, doble cheddar, cebollita picada, lechuga, tomate, mayo casera, savora y ketchup. Incluye papas." },
 
-      // PAPAS
-      { id: 40, name: "Papas Fritas Clásicas", price: 7500, category: "papas", desc: "Porción abundante de papas fritas crocantes" },
-      { id: 41, name: "Papas c/ Cheddar, Panceta y Verdeo", price: 10500, category: "papas", desc: "Porción para compartir bañada en salsa cheddar, panceta y verdeo" },
+      // PAPAS PARA COMPARTIR
+      { id: 50, name: "PAPAS CLÁSICAS", price: 9000, category: "papas", desc: "Porción abundante de papas fritas crocantes para compartir." },
+      { id: 51, name: "PAPAS CON HUEVO", price: 11000, category: "papas", desc: "Porción de papas fritas con huevo." },
+      { id: 52, name: "PAPAS ESPECIALES", price: 13000, category: "papas", desc: "Papa, cheddar, huevo y jamón." },
+      { id: 53, name: "PAPAS CON CHEDDAR, PANCETA Y VERDEO", price: 13000, category: "papas", desc: "Porción de papas bañadas con queso cheddar, panceta crocante y verdeo." },
 
       // BEBIDAS
-      { id: 50, name: "Coca Cola 1.75 Lts", price: 4000, category: "bebidas", desc: "Botella familiar de Coca Cola" },
-      { id: 51, name: "Agua Mineral 500ml", price: 2000, category: "bebidas", desc: "Con o sin gas" }
+      { id: 60, name: "COCA COLA 500 ML", price: 3000, category: "bebidas", desc: "Gaseosa 500 ml" },
+      { id: 61, name: "COCA COLA 1.5 LTS", price: 5000, category: "bebidas", desc: "Gaseosa 1.5 Lts" },
+      { id: 62, name: "COCA COLA ZERO 1.5 LTS", price: 5000, category: "bebidas", desc: "Gaseosa 1.5 Lts Zero" },
+      { id: 63, name: "COCA COLA 2.5 LTS", price: 7000, category: "bebidas", desc: "Gaseosa 2.5 Lts" },
+      { id: 64, name: "COCA COLA ZERO 2.5 LTS", price: 7000, category: "bebidas", desc: "Gaseosa 2.5 Lts Zero" },
+      { id: 65, name: "FANTA 1.5 LTS", price: 5000, category: "bebidas", desc: "Gaseosa 1.5 Lts" },
+      { id: 66, name: "SPRITE 1.5 LTS", price: 5000, category: "bebidas", desc: "Gaseosa 1.5 Lts" },
+      { id: 67, name: "PASO DE LOS TOROS 1.5 LTS", price: 4500, category: "bebidas", desc: "Gaseosa 1.5 Lts" },
+      { id: 68, name: "PEPSI 1.5 LTS", price: 4000, category: "bebidas", desc: "Gaseosa 1.5 Lts" },
+      { id: 69, name: "SEVEN UP 1.5 LTS", price: 4000, category: "bebidas", desc: "Gaseosa 1.5 Lts" },
+      { id: 70, name: "AGUA MINERAL 2 LTS", price: 3000, category: "bebidas", desc: "Agua mineral 2 Lts" },
+      { id: 71, name: "AGUA SABORIZADA 500 ML", price: 2500, category: "bebidas", desc: "Agua saborizada 500 ml" },
+      { id: 72, name: "AGUA SABORIZADA 1.5 LTS", price: 3000, category: "bebidas", desc: "Agua saborizada 1.5 Lts" },
+      { id: 73, name: "IMPERIAL GOLDEN 473 ML", price: 4000, category: "bebidas", desc: "Cerveza en lata 473 ml" },
+      { id: 74, name: "IMPERIAL IPA 473 ML", price: 4000, category: "bebidas", desc: "Cerveza en lata 473 ml" },
+      { id: 75, name: "STELLA ARTOIS 473 ML", price: 4500, category: "bebidas", desc: "Cerveza en lata 473 ml" },
+      { id: 76, name: "SCHNEIDER 473 ML", price: 3500, category: "bebidas", desc: "Cerveza en lata 473 ml" },
+      { id: 77, name: "BRAHMA 473 ML", price: 3500, category: "bebidas", desc: "Cerveza en lata 473 ml" },
+      { id: 78, name: "SANTA FE 473 ML", price: 3500, category: "bebidas", desc: "Cerveza en lata 473 ml" },
+
+      // PROMOS
+      { id: 80, name: "PROMO AMERICANA", price: 42000, category: "promos", desc: "2 Lomitos Americanos + 1 Coca de 1.75 Lts" },
+      { id: 81, name: "PROMO MILAS CLÁSICAS", price: 38000, category: "promos", desc: "2 Milas Clásicas + 1 Coca de 1.75 Lts" },
+      { id: 82, name: "PROMO AL VERDEO", price: 41000, category: "promos", desc: "2 Lomitos al Verdeo + 1 Coca de 1.75 Lts" },
+      { id: 83, name: "PROMO SANTIAGUEÑOS", price: 38000, category: "promos", desc: "2 Lomitos Santiagueños + 1 Coca de 1.75 Lts" },
+      { id: 84, name: "PROMO COMBINADA 1", price: 40000, category: "promos", desc: "1 Lomito Americano + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts" },
+      { id: 85, name: "PROMO COMBINADA 2", price: 40500, category: "promos", desc: "1 Lomito c/ Cheddar y Bacon + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts" },
+      { id: 86, name: "PROMO COMBINADA 3", price: 38000, category: "promos", desc: "1 Lomito Santiagueño + 1 Mila Clásica + 1 Coca de 1.75 Lts" },
+      { id: 87, name: "PROMO COMBINADA 4", price: 39500, category: "promos", desc: "1 Lomito 4 Quesos + 1 Lomito Santiagueño + 1 Coca de 1.75 Lts" },
+      { id: 88, name: "BOX 2 HAMBURGUESAS + PAPAS C/ CHEDDAR, PANCETA Y VERDEO", price: 25000, category: "promos", desc: "2 hamburguesas (medallón, tomate, lechuga, mayo casera, ketchup y savora) + papas con cheddar, panceta y verdeo." },
+      { id: 89, name: "BOX 2 HAMBURGUESAS + PORCIÓN DE PAPAS", price: 23000, category: "promos", desc: "2 hamburguesas (medallón, tomate, lechuga, mayo casera, ketchup y savora) + porción de papas." }
     ];
 
     let cart = {};
@@ -602,7 +635,7 @@
       const categories = [
         { id: 'promos', title: '🔥 Promos' },
         { id: 'lomitos', title: '🥖 Lomitos' },
-        { id: 'milanesa', title: '🥪 Sándwiches de Milanesa' },
+        { id: 'milanesa', title: '🥩 Sándwiches de Milanesa' },
         { id: 'hamburguesas', title: '🍔 Hamburguesas' },
         { id: 'papas', title: '🍟 Papas para compartir' },
         { id: 'bebidas', title: '🥤 Bebidas' }
